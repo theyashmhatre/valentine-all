@@ -1,0 +1,197 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  user-select: none;
+}
+
+
+.font-link {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+}
+
+.normal-font {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.entry-page {
+  display: flex;
+  flex-direction: column;
+  font-size: xx-large;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url("https://marketplace.canva.com/EAE_NRav_uY/1/0/1600w/canva-red-neon-organized-desktop-gaming-background---desktop-wallpaper-2eq-ewMjw4U.jpg");
+}
+
+.main-page {
+  background-image: none;
+}
+
+#animation-container {
+  position: relative;
+  text-align: center;
+  /* Center text in container */
+}
+
+#animation {
+  height: 250px;
+  display: block;
+  border-radius: 5px;
+  /* Center the image */
+  margin: 0 auto;
+  /* Center the image */
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 2em;
+}
+
+#yesBtn,
+#noBtn {
+  font-size: 1em;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.1s;
+  border: none;
+  border-radius: 5px;
+  color: white;
+
+
+}
+
+#yesBtn {
+  background: linear-gradient(to right, #4CAF50, #45a049);
+  /* Green gradient */
+  box-shadow: 0px 2px 5px rgba(76, 175, 76, 0.7);
+  /* Green shadow */
+}
+
+#noBtn {
+  background: linear-gradient(to right, #d9534f, #c9302c);
+  /* Red gradient */
+  box-shadow: 0px 2px 5px rgba(217, 83, 79, 0.7);
+  /* Red shadow */
+}
+
+#valentine-text,
+#yay-text {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: black;
+  margin-top: 20px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: rgb(234, 241, 251);
+  color: rgb(32, 33, 36);
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  z-index: -1;
+}
+
+#header {
+  width: 100%;
+  background-color: #0b57d0;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#disclaimer {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  #animation {
+    width: 90%;
+  }
+
+  #yesBtn,
+  #noBtn {
+    font-size: 1.2em;
+    padding: 12px 24px;
+    margin: 0 8px;
+  }
+
+  #valentine-text,
+  #yay-text {
+    font-size: 2em;
+  }
+
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
