@@ -11,6 +11,7 @@ import {
   Link,
 } from "react-router-dom";
 import CreatePage from './Components/CreatePage';
+import DummyPage from './Components/DummyPage';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<MainPage />}></Route>
+          <Route exact path="/" element={<DummyPage />}></Route>
           <Route exact path="/create" element={<CreatePage />}></Route>
           <Route exact path='/:id' element={<MainPage />}></Route>
         </Routes>

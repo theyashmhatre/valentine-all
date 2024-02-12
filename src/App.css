@@ -54,6 +54,11 @@ body {
     "SHLN" 50;
 }
 
+.yay-text {
+  width: 50vw;
+  margin-top: 10px;
+}
+
 .normal-font {
   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
@@ -175,6 +180,10 @@ body {
   #valentine-text,
   #yay-text {
     font-size: 2em;
+  }
+
+  .yay-text {
+    width: 80vw;
   }
 
 }

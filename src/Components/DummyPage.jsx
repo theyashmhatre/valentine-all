@@ -1,38 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import { texts, gifs } from '../data';
+import React, { useState } from 'react'
+import { gifs, texts } from '../data';
 import EntryPage from './EntryPage';
-import { useParams } from 'react-router-dom';
-import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../firebase';
 
-export default function MainPage() {
+export default function DummyPage() {
 
-  const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
-  const { id } = useParams();
-  const [user, setUser] = useState({
-    name: "",
-    url_name: "",
-    final_message: ""
-  })
+  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    if (id) {
-      (async () => {
-        const userRef = doc(db, "users", id);
-        const userSnap = await getDoc(userRef);
-
-        if (userSnap.exists()) {
-          let data = userSnap.data()
-          setUser(userSnap.data())
-          console.log(data);
-        } else {
-          console.log("No Such Document.");
-          return false;
-        }
-      })();
-    }
-  }, [])
+  const user = {
+    name: "Zoey",
+    url_name: "zoey",
+    final_message: "Thanks for accepting. I knew you would accept. Now send this to me as a screenshot and make my day 🥰"
+  }
 
   function addContent() {
     let additionalContent = document.createElement("div");

@@ -1,3 +1,4 @@
+
 const gifs = [
   "https://media1.tenor.com/m/fAKIFrYkfpAAAAAd/sad-sad-cat.gif",
   "https://media1.tenor.com/m/HwGJ_4uXGU4AAAAd/stare-cat-stare.gif",
@@ -19,14 +20,14 @@ const gifs = [
 
 const texts = [
   "No",
-  "Please Aparna",
+  "Pleasee",
   "Are you sure? 🥺",
   "This might break my heart",
-  "Ab zyada ho rha hai!",
-  "Maine kya bigaada hai tera?",
+  "Your hesitation is adorable",
+  "My heart is still open for you",
   "Give it another thought yaar",
   "Still no?",
-  "Baadmai regret kregi, sochle!",
+  "Whyyyyyy",
   "Don't be so cold!",
   "This is harassment",
   "Change of heart? or else 🔪",
