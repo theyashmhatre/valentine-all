@@ -14,8 +14,7 @@ const gifs = [
   "https://media1.tenor.com/m/j5rPRPBwSOMAAAAd/cat-smacking-other-cat-cat.gif", //cat smacking
   "https://media1.tenor.com/m/zg7MS65BiKAAAAAC/puss-in-boots-cat.gif",
   "https://media1.tenor.com/m/fAKIFrYkfpAAAAAd/sad-sad-cat.gif",
-  "https://media1.tenor.com/m/HwGJ_4uXGU4AAAAd/stare-cat-stare.gif",
-  "https://media1.tenor.com/m/HEyVmj42ndQAAAAC/cat-cat-fight.gif",
+  "https://media1.tenor.com/m/HwGJ_4uXGU4AAAAd/stare-cat-stare.gif"
 ]
 
 const texts = [
@@ -33,8 +32,7 @@ const texts = [
   "Change of heart? or else 🔪",
   "Pretty pleaseeeeee?",
   "Is this your final answer? 😡",
-  "Can't be. Please reconsider 🥰",
-  "Ashley, LOOK AT GREEN!",
+  "Can't be. Please reconsider 🥰"
 ]
 
 export {gifs, texts};

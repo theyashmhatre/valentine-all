@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { db } from "../firebase"
 import { addDoc, collection, doc, getDoc, setDoc } from "firebase/firestore";
+import { FaExternalLinkAlt, FaExternalLinkSquareAlt } from "react-icons/fa";
+import { MdOutlineContentCopy } from "react-icons/md";
+import ConfettiExplosion from 'react-confetti-explosion';
 
 export default function CreatePage() {
 
@@ -10,8 +13,10 @@ export default function CreatePage() {
     final_message: ""
   })
 
+  const PROD_URL = "https://mystery.yashmhatre.in/"
+
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [success, setSuccess] = useState(false);
 
   function handleInput(e) {
     e.preventDefault();
@@ -45,7 +50,7 @@ export default function CreatePage() {
         });
 
         setError("")
-        setSuccess("Created Successfully. 🎉\n Please visit https://mystery.yashmhatre.in/" + data.url_name)
+        setSuccess(true)
       }
 
     } catch (e) {
@@ -53,29 +58,43 @@ export default function CreatePage() {
     }
   }
 
+  function openURL() {
+    window.open(PROD_URL + data.url_name);
+  }
+
   return (
     <div className='normal-font'>
+      <h1>Create your own Valentine's Proposal 💘</h1>
       <label htmlFor='name'>Name</label>
       <br />
       <input type="text"
         name="name"
+        style={{ marginBottom: "10px", width: "12rem" }}
         onChange={handleInput} placeholder='Name of your partner' />
       <br />
-      <label htmlFor='url_name'>URL Name (Optional)</label>
+      <label htmlFor='url_name'>Unique Name for URL</label>
       <br />
       <input type="text"
         name="url_name"
-        onChange={handleInput} placeholder='https://webite.com/{URL NAME}' />
+        style={{ marginBottom: "10px", width: "12rem" }}
+        onChange={handleInput} placeholder='e.g. deepika' />
       <br />
       <label htmlFor='final_message'>Dedicated Message</label>
       <br />
-      <textarea onChange={handleInput} name="final_message"></textarea>
+      <textarea onChange={handleInput} style={{ marginBottom: "10px", width: "12rem", height: "4rem" }} name="final_message"></textarea>
       <br />
 
       <button className='normal-font' onClick={onSubmit}>Create</button>
 
       {error ? <p style={{ color: "red" }}>{error}</p> : <></>}
-      {success ? <p style={{ color: "green" }}>{success}</p> : <></>}
+      {success ? <>
+        <p style={{ color: "green", fontWeight: "bold", fontSize: "20px" }}>Created Successfully.🎉 </p>
+        <p style={{ fontSize: "25px" }}>Please visit <span style={{ textDecoration: "underline" }}>{PROD_URL + data.url_name}</span>
+        </p>
+        <FaExternalLinkSquareAlt size={"25px"} style={{ marginRight: "10px", cursor: "pointer" }} onClick={openURL} />
+        <MdOutlineContentCopy size={"25px"} style={{ cursor: "pointer" }} onClick={() => { navigator.clipboard.writeText(PROD_URL + data.url_name) }} />
+      </> : <></>}
+
     </div>
   )
 }

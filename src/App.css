@@ -40,9 +40,8 @@ body {
   user-select: none;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("https://img.freepik.com/free-vector/blurred-valentine-s-day-wallpaper_23-2148819570.jpg?w=996&t=st=1707758978~exp=1707759578~hmac=48aafa68589b41b972d03c8a1e26b2736ff5cee85c040a1c8e1dbd4ddd34c0a9");
+  background-image: url("../public/background.jpg");
 }
-
 
 .font-link {
   font-family: "Honk", system-ui;

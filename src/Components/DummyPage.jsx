@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { gifs, texts } from '../data';
 import EntryPage from './EntryPage';
+import ConfettiExplosion from 'react-confetti-explosion';
 
 export default function DummyPage() {
 
   const [started, setStarted] = useState(false);
   const [count, setCount] = useState(0);
+  const [isExploding, setIsExploding] = useState(false);
 
   const user = {
     name: "Zoey",
@@ -54,6 +56,7 @@ export default function DummyPage() {
       headingText.remove();
     }
     addContent();
+    setIsExploding(true);
 
   }
 
@@ -98,6 +101,7 @@ export default function DummyPage() {
           <button id="yesBtn" onClick={clearContent}>YES</button>
           <button id="noBtn" onClick={adjustButtonSize}>{texts[count % gifs.length]}</button>
         </div>
+        {isExploding && <ConfettiExplosion />}
       </div>
         :
         <EntryPage setStarted={setStarted} user={user} />}

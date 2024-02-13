@@ -4,6 +4,7 @@ import EntryPage from './EntryPage';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../firebase';
+import ConfettiExplosion from 'react-confetti-explosion';
 
 export default function MainPage() {
 
@@ -15,6 +16,7 @@ export default function MainPage() {
     url_name: "",
     final_message: ""
   })
+  const [isExploding, setIsExploding] = useState(false);
 
   useEffect(() => {
     if (id) {
@@ -74,7 +76,10 @@ export default function MainPage() {
     if (headingText) {
       headingText.remove();
     }
+
     addContent();
+    setIsExploding(true);
+
 
   }
 
@@ -104,22 +109,25 @@ export default function MainPage() {
 
   return (
     <>
-      {started ? <div className='main-page normal-font'>
-        {!count ?
-          <div id="animation-container">
-            <img id="animation" src="https://media1.tenor.com/m/Vy46BTSo3hsAAAAC/bear-love.gif" alt="Animated Image" />
+      {started ?
+        <div className='main-page normal-font'>
+          {!count ?
+            <div id="animation-container">
+              <img id="animation" src="https://media1.tenor.com/m/Vy46BTSo3hsAAAAC/bear-love.gif" alt="Animated Image" />
+            </div>
+            :
+            <div id="animation-container">
+              <img id="animation" src={gifs[count % gifs.length]} alt="Animated Image" />
+            </div>
+          }
+          <div id="heading" style={{ fontSize: "large", fontWeight: "bold" }}>Hi Cutie</div>
+          <div id="valentine-text">Will you be my Valentine?</div>
+          <div id="buttons">
+            <button id="yesBtn" onClick={clearContent}>YES</button>
+            <button id="noBtn" onClick={adjustButtonSize}>{texts[count % gifs.length]}</button>
           </div>
-          :
-          <div id="animation-container">
-            <img id="animation" src={gifs[count % gifs.length]} alt="Animated Image" />
-          </div>}
-        <div id="heading" style={{ fontSize: "large", fontWeight: "bold" }}>Hi Cutie</div>
-        <div id="valentine-text">Will you be my Valentine?</div>
-        <div id="buttons">
-          <button id="yesBtn" onClick={clearContent}>YES</button>
-          <button id="noBtn" onClick={adjustButtonSize}>{texts[count % gifs.length]}</button>
+          {isExploding && <ConfettiExplosion />}
         </div>
-      </div>
         :
         <EntryPage setStarted={setStarted} user={user} />}
     </>
