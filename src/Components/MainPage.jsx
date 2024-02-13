@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import ConfettiExplosion from 'react-confetti-explosion';
+import song from "../assets/song.mp3";
 
 export default function MainPage() {
 
@@ -52,6 +53,16 @@ export default function MainPage() {
     additionalContent.appendChild(yayText);
     document.body.appendChild(additionalContent);
 
+    if (id === "naina"){
+      playSong();
+    }
+
+  }
+
+  const audio = new Audio(song);
+
+  function playSong() {
+    audio.play();
   }
 
   function clearContent() {
